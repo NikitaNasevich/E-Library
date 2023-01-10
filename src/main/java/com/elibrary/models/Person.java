@@ -9,7 +9,7 @@ public class Person {
     private int id;
 
     @NotEmpty(message = "Name should not be empty")
-    @Pattern(regexp = "[A-Z]\\w+ [A-Z]\\w+ [A-Z]\\w+", message = "Keep this example: Last name First name Father's name")
+
     private String fullName;
 
     @Min(value = 1900, message = "Year of birth should be more than 1900")
@@ -18,6 +18,9 @@ public class Person {
     public Person(String fullName, int yearOfBirth) {
         this.fullName = fullName;
         this.yearOfBirth = yearOfBirth;
+    }
+
+    public Person() {
     }
 
     public int getId() {

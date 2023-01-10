@@ -28,8 +28,8 @@ public class PersonDAO {
         return jdbcTemplate.query("SELECT * FROM Person", new BeanPropertyRowMapper<>(Person.class));
     }
 
-    public Optional<Person> show(String email) {
-        return jdbcTemplate.query("SELECT * FROM Person WHERE email=?", new Object[]{email},
+    public Optional<Person> show(String fullName) {
+        return jdbcTemplate.query("SELECT * FROM Person WHERE full_name=?", new Object[]{fullName},
                 new BeanPropertyRowMapper<>(Person.class)).stream().findAny();
     }
 
@@ -38,14 +38,15 @@ public class PersonDAO {
                 .stream().findAny().orElse(null);
     }
 
-//    public void save(Person person) {
-//        jdbcTemplate.update("INSERT INTO Person (name, age, email, address) VALUES(?, ?, ?, ?)", person.getName(), person.getAge(), person.getEmail(), person.getAddress());
-//    }
+    public void save(Person person) {
+        jdbcTemplate.update("INSERT INTO Person (full_name, year_of_birth) VALUES(?, ?)", person.getFullName(), person.getYearOfBirth());
+    }
 
-//    public void update(int id, Person updatePerson) {
-//        jdbcTemplate.update("UPDATE Person SET name=?, age=?, email=?, address=? WHERE id=?", updatePerson.getName(), updatePerson.getAge(),
-//                updatePerson.getEmail(), updatePerson.getAddress(), id);
-//    }
+
+    public void update(int id, Person updatePerson) {
+        jdbcTemplate.update("UPDATE Person SET full_name=?, year_of_bitrh=? WHERE id=?",
+                updatePerson.getFullName(), updatePerson.getYearOfBirth(), id);
+    }
 
 
     public void delete(int id) {

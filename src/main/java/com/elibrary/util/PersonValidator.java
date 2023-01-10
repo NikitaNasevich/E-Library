@@ -25,11 +25,11 @@ public class PersonValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-//        Person person = (Person) target;
+        Person person = (Person) target;
 
-//        if(personDAO.show(person.getEmail()).isPresent()) {
-//            errors.rejectValue("email", "", "This email is already taken");
-//        }
+        if(personDAO.show(person.getFullName()).isPresent()) {
+            errors.rejectValue("fullName", "", "Человек с таким именем уже зарегистрирован");
+        }
     }
 }
 
