@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0d6ab39-a464-4953-81a1-92c5bb75d24c" name="Changes" comment="add edit person option">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c0d6ab39-a464-4953-81a1-92c5bb75d24c" name="Changes" comment="add show person option">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/controllers/PeopleController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +198,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672831142218</updated>
-      <workItem from="1672831144301" duration="23098000" />
+      <workItem from="1672831144301" duration="23474000" />
     </task>
     <task id="LOCAL-00001" summary="init new rep">
       <created>1672831299010</created>
@@ -244,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673339587955</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add show person option">
+      <created>1673340784399</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673340784399</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +273,7 @@
     <MESSAGE value="update gitignore, add: index view PeopleController PersonDAO PersonValidator" />
     <MESSAGE value="add create new person page" />
     <MESSAGE value="add edit person option" />
-    <option name="LAST_COMMIT_MESSAGE" value="add edit person option" />
+    <MESSAGE value="add show person option" />
+    <option name="LAST_COMMIT_MESSAGE" value="add show person option" />
   </component>
 </project>
