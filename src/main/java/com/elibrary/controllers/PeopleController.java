@@ -61,18 +61,18 @@ public class PeopleController {
         return "people/edit";
     }
 
-//    @PatchMapping("/{id}")
-//    public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, @PathVariable("id") int id) {
-//
-//        personValidator.validate(person, bindingResult);
-//
-//        if (bindingResult.hasErrors()) {
-//            return "people/edit";
-//        }
-//
-//        personDAO.update(id, person);
-//        return "redirect:/people";
-//    }
+    @PatchMapping("/{id}")
+    public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, @PathVariable("id") int id) {
+
+        personValidator.validate(person, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "people/edit";
+        }
+
+        personDAO.update(id, person);
+        return "redirect:/people";
+    }
 
 //    @DeleteMapping("/{id}")
 //    public String delete(@PathVariable("id") int id) {
