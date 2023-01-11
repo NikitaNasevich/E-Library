@@ -9,7 +9,6 @@ public class Person {
     private int id;
 
     @NotEmpty(message = "Name should not be empty")
-
     private String fullName;
 
     @Min(value = 1900, message = "Year of birth should be more than 1900")
@@ -25,10 +24,6 @@ public class Person {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFullName() {
