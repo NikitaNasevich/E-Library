@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class BookDAO {
@@ -40,5 +41,14 @@ public class BookDAO {
     public void update(int id, Book updateBook) {
         jdbcTemplate.update("UPDATE Book SET title=?, author=?, year=? WHERE id=?",
                 updateBook.getTitle(), updateBook.getAuthor(), updateBook.getYear(), id);
+    }
+
+    public void delete(int id) {
+        jdbcTemplate.update("DELETE FROM Book WHERE id=?", id);
+    }
+
+    public List<Book> list(int personId) {
+        return jdbcTemplate.query("SELECT * FROM Book WHERE person_id=?", new Object[]{personId}, new BeanPropertyRowMapper<>(Book.class))
+                .stream().collect(Collectors.toList());
     }
 }
