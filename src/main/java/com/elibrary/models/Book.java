@@ -1,11 +1,20 @@
 package com.elibrary.models;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Book {
     private int id;
+    @NotEmpty(message = "Название книги не может быть пустым")
+    @Size(min = 2, max = 100, message = "Название книги должно быть от 2 до 100 символов")
     private String title;
+    @NotEmpty(message = "Автор не может быть пустым")
+    @Size(min = 2, max = 100, message = "Название книги должно быть от 2 до 100 символов")
     private String author;
+    @Min(value = 1600)
     private int year;
-    private Person taker;
+    private String fullName;
 
     public Book() {
     }
@@ -48,11 +57,11 @@ public class Book {
         this.year = year;
     }
 
-    public Person getTaker() {
-        return taker;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setTaker(Person taker) {
-        this.taker = taker;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

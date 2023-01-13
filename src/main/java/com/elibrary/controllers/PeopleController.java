@@ -1,6 +1,5 @@
 package com.elibrary.controllers;
 
-import com.elibrary.dao.BookDAO;
 import com.elibrary.dao.PersonDAO;
 import com.elibrary.models.Person;
 import com.elibrary.util.PersonValidator;
@@ -19,13 +18,10 @@ public class PeopleController {
     private final PersonDAO personDAO;
     private final PersonValidator personValidator;
 
-    private final BookDAO bookDAO;
-
     @Autowired
-    public PeopleController(PersonDAO personDAO, PersonValidator personValidator, BookDAO bookDAO) {
+    public PeopleController(PersonDAO personDAO, PersonValidator personValidator) {
         this.personDAO = personDAO;
         this.personValidator = personValidator;
-        this.bookDAO = bookDAO;
     }
 
     @GetMapping("")
@@ -36,10 +32,8 @@ public class PeopleController {
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        System.out.println(id);
         model.addAttribute("person", personDAO.show(id));
-        System.out.println(id);
-        model.addAttribute("books", bookDAO.list(id));
+        model.addAttribute("books", personDAO.list(id));
         return "people/show";
     }
 

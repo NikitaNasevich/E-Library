@@ -1,22 +1,18 @@
 package com.elibrary.models;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 import java.util.List;
 
 public class Person {
 
     private int id;
 
-    @NotEmpty(message = "Name should not be empty")
+    @NotEmpty(message = "")
+    @Size(min = 2, max = 100, message = "")
     private String fullName;
-
+    @NotNull
     @Min(value = 1900, message = "Year of birth should be more than 1900")
     private int yearOfBirth;
-
-    private List<Book> books;
-
 
     public Person(String fullName, int yearOfBirth) {
         this.fullName = fullName;
@@ -28,6 +24,10 @@ public class Person {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFullName() {
@@ -45,11 +45,5 @@ public class Person {
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
-    public List<Book> getBooks() {
-        return books;
-    }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
 }

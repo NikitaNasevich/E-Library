@@ -9,12 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0d6ab39-a464-4953-81a1-92c5bb75d24c" name="Changes" comment="add model book, and methods: add new book, edit book, show all books, show chosen book">
+    <list default="true" id="c0d6ab39-a464-4953-81a1-92c5bb75d24c" name="Changes" comment="update views, implemented assigning a book to a user, releasing a book, added sql script for init DB">
+      <change afterPath="$PROJECT_DIR$/src/main/sql/e_lib_db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d228db70-34cb-42cb-b0db-7f3db2732e97.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d228db70-34cb-42cb-b0db-7f3db2732e97.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d228db70-34cb-42cb-b0db-7f3db2732e97/storage_v2/_src_/database/e_lib_db.krWHWw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d228db70-34cb-42cb-b0db-7f3db2732e97/storage_v2/_src_/database/e_lib_db.krWHWw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/config/MySpringMvcDispatcherSerlvetIntitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/config/MySpringMvcDispatcherSerlvetIntitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/config/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/controllers/BooksController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/controllers/PeopleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/models/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/util/BookValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/elibrary/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/elibrary/util/PersonValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,24 +66,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/study/Spring/elib-project/E-Library/src/main/webapp/WEB-INF/views/people&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15429688&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.36878613&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/study/Spring/elib-project/E-Library/src/main/webapp/WEB-INF/views/people",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15429688",
+    "project.structure.side.proportion": "0.36878613",
+    "spring.configuration.checksum": "a65f142fd99b5763b0a4c59bf72f8e29"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\study\Spring\elib-project\E-Library\src\main\webapp\WEB-INF\views\people" />
@@ -204,6 +220,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672831142218</updated>
       <workItem from="1672831144301" duration="35520000" />
+      <workItem from="1673531488446" duration="16270000" />
     </task>
     <task id="LOCAL-00001" summary="init new rep">
       <created>1672831299010</created>
@@ -268,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673434855904</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="did a part of books view in a person page">
+      <created>1673531734793</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673531734793</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +319,8 @@
     <MESSAGE value="add show person option" />
     <MESSAGE value="add delete person option" />
     <MESSAGE value="add model book, and methods: add new book, edit book, show all books, show chosen book" />
-    <option name="LAST_COMMIT_MESSAGE" value="add model book, and methods: add new book, edit book, show all books, show chosen book" />
+    <MESSAGE value="did a part of books view in a person page" />
+    <MESSAGE value="update views, implemented assigning a book to a user, releasing a book, added sql script for init DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="update views, implemented assigning a book to a user, releasing a book, added sql script for init DB" />
   </component>
 </project>

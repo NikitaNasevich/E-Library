@@ -9,9 +9,9 @@
 16995||-9223372036854775808|T|G
 16995||10|T|G
 16995||6171|T|G</Grants>
-      <IntrospectionStateNumber>9354</IntrospectionStateNumber>
+      <IntrospectionStateNumber>9404</IntrospectionStateNumber>
       <ServerVersion>14.4</ServerVersion>
-      <StartupTime>1671527230</StartupTime>
+      <StartupTime>1673514465</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -810,10 +810,10 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>9354</IntrospectionStateNumber>
+      <IntrospectionStateNumber>9404</IntrospectionStateNumber>
       <ObjectId>17325</ObjectId>
-      <Relations>sequence|table|17329|17330|1
-sequence|table|17340|17341|1
+      <Relations>sequence|table|17367|17368|1
+sequence|table|17329|17330|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4255,15 +4255,15 @@ sequence|table|17340|17341|1
     <schema id="267" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>9354</IntrospectionStateNumber>
+      <IntrospectionStateNumber>9404</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
     <sequence id="268" parent="267" name="book_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>17340</ObjectId>
-      <StateNumber>9353</StateNumber>
+      <ObjectId>17367</ObjectId>
+      <StateNumber>9403</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="269" parent="267" name="person_id_seq">
@@ -4273,8 +4273,8 @@ sequence|table|17340|17341|1
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="270" parent="267" name="book">
-      <ObjectId>17341</ObjectId>
-      <StateNumber>9353</StateNumber>
+      <ObjectId>17368</ObjectId>
+      <StateNumber>9403</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4284,80 +4284,76 @@ sequence|table|17340|17341|1
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <check id="272" parent="270" name="book_year_check">
-      <ColNames>year</ColNames>
-      <ObjectId>17344</ObjectId>
-      <Predicate>year &gt; 1000</Predicate>
-      <StateNumber>9353</StateNumber>
-    </check>
-    <column id="273" parent="270" name="id">
+    <column id="272" parent="270" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>9353</StateNumber>
+      <StateNumber>9403</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="274" parent="270" name="title">
+    <column id="273" parent="270" name="title">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>9353</StateNumber>
+      <StateNumber>9403</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="275" parent="270" name="author">
+    <column id="274" parent="270" name="author">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>9353</StateNumber>
+      <StateNumber>9403</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="276" parent="270" name="year">
+    <column id="275" parent="270" name="year">
       <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>9353</StateNumber>
+      <StateNumber>9403</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="277" parent="270" name="person_id">
+    <column id="276" parent="270" name="person_id">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
-      <StateNumber>9353</StateNumber>
+      <StateNumber>9403</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="278" parent="270" name="book_person_id_fkey">
+    <foreign-key id="277" parent="270" name="book_person_id_fkey">
       <ColNames>person_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17349</ObjectId>
+      <ObjectId>17375</ObjectId>
+      <OnDelete>set-null</OnDelete>
       <RefColNames>id</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>9353</StateNumber>
+      <StateNumber>9403</StateNumber>
       <RefTableId>17330</RefTableId>
       <RefTableName>person</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="279" parent="270" name="book_pkey">
+    <index id="278" parent="270" name="book_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17347</ObjectId>
+      <ObjectId>17373</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>9353</StateNumber>
+      <StateNumber>9403</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="280" parent="270" name="book_pkey">
+    <key id="279" parent="270" name="book_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17348</ObjectId>
+      <ObjectId>17374</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>9353</StateNumber>
-      <UnderlyingIndexId>17347</UnderlyingIndexId>
+      <StateNumber>9403</StateNumber>
+      <UnderlyingIndexId>17373</UnderlyingIndexId>
     </key>
-    <check id="281" parent="271" name="person_year_of_birth_check">
+    <check id="280" parent="271" name="person_year_of_birth_check">
       <ColNames>year_of_birth</ColNames>
       <ObjectId>17333</ObjectId>
       <Predicate>year_of_birth &gt; 1900</Predicate>
       <StateNumber>9352</StateNumber>
     </check>
-    <column id="282" parent="271" name="id">
+    <column id="281" parent="271" name="id">
       <DataType>integer|0s</DataType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
@@ -4365,20 +4361,20 @@ sequence|table|17340|17341|1
       <StateNumber>9352</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="283" parent="271" name="full_name">
+    <column id="282" parent="271" name="full_name">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>9352</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="284" parent="271" name="year_of_birth">
+    <column id="283" parent="271" name="year_of_birth">
       <DataType>integer|0s</DataType>
       <Position>3</Position>
       <StateNumber>9352</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="285" parent="271" name="person_pkey">
+    <index id="284" parent="271" name="person_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17336</ObjectId>
@@ -4387,7 +4383,7 @@ sequence|table|17340|17341|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="286" parent="271" name="person_full_name_key">
+    <index id="285" parent="271" name="person_full_name_key">
       <ColNames>full_name</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17338</ObjectId>
@@ -4398,14 +4394,14 @@ sequence|table|17340|17341|1
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="287" parent="271" name="person_pkey">
+    <key id="286" parent="271" name="person_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17337</ObjectId>
       <Primary>1</Primary>
       <StateNumber>9352</StateNumber>
       <UnderlyingIndexId>17336</UnderlyingIndexId>
     </key>
-    <key id="288" parent="271" name="person_full_name_key">
+    <key id="287" parent="271" name="person_full_name_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>17339</ObjectId>
       <StateNumber>9352</StateNumber>

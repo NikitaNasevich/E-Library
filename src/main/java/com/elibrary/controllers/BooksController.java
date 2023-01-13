@@ -1,7 +1,9 @@
 package com.elibrary.controllers;
 
 import com.elibrary.dao.BookDAO;
+import com.elibrary.dao.PersonDAO;
 import com.elibrary.models.Book;
+import com.elibrary.models.Person;
 import com.elibrary.util.BookValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,11 +18,13 @@ import javax.validation.Valid;
 public class BooksController {
 
     private final BookDAO bookDAO;
+    private final PersonDAO personDAO;
     private final BookValidator bookValidator;
 
     @Autowired
-    public BooksController(BookDAO bookDAO, BookValidator bookValidator) {
+    public BooksController(BookDAO bookDAO, PersonDAO personDAO, BookValidator bookValidator) {
         this.bookDAO = bookDAO;
+        this.personDAO = personDAO;
         this.bookValidator = bookValidator;
     }
 
@@ -50,8 +54,9 @@ public class BooksController {
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model) {
+    public String show(@ModelAttribute("person") Person person, @PathVariable("id") int id, Model model) {
         model.addAttribute("book", bookDAO.show(id));
+        model.addAttribute("people", personDAO.index());
         return "books/show";
     }
 
@@ -79,4 +84,17 @@ public class BooksController {
         bookDAO.delete(id);
         return "redirect:/books";
     }
+
+    @PatchMapping("/{id}/release")
+    public String release(@PathVariable("id") int id) {
+        bookDAO.release(id);
+        return "redirect:/books/{id}";
+    }
+
+    @PatchMapping("/{id}/set")
+    public String set(@ModelAttribute("person") Person person, @PathVariable("id") int id) {
+        bookDAO.set(person.getId(), id);
+        return "redirect:/books/{id}";
+    }
+
 }
