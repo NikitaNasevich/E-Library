@@ -15,7 +15,7 @@
     <hr/>
 </a>
 <a th:if="${#lists.isEmpty(book.getFullName())}">
-    Эта канига свободна. Кому назначить ее?
+    <span>Эта канига свободна. Кому назначить ее?</span>
     <form th:method="PATCH" th:action="@{/books/{id}/set(id=${book.getId()})}">
         <label for="person">Выберите человека</label>
         <select th:object="${person}" th:field="*{id}" id="person">
